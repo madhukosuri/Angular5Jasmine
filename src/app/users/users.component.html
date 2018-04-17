@@ -1,0 +1,17 @@
+<mat-toolbar>Dashboard</mat-toolbar>
+<div fxLayout="row wrap" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="10px" fxLayoutAlign="stretch">
+  <mat-card class="app-card" fxFlex.sm="100%" fxFlex.xs="100%">
+    <mat-drawer-container class="dashboard-container" style="height: 768px">
+      <mat-drawer mode="side" opened="true" class="side-nav">
+        <mat-list role="list">
+          <a mat-list-item routerLink="/users" routerLinkActive="active" role="listitem">Users</a>
+          <a mat-list-item routerLink="/orders" routerLinkActive="active" role="listitem">Orders</a>
+          <a mat-list-item  routerLink="/products" routerLinkActive="active" role="listitem">Products</a>
+        </mat-list>
+      </mat-drawer>
+      <mat-drawer-content>
+        Main content
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </mat-card>
+</div>

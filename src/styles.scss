@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+/* Application-wide Styles */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.login {
+  padding-left: 40em;
+  padding-top: 10em;
+}
+.login-btn {
+  width: 31em;
+}
+.login-btn b {
+  margin-right: 33px;
+}
+.sing-up-link {
+  margin-left: 8em;
+  color: blue;
+  text-decoration: none;
+}
+.login-name {
+  color: blue;
+  margin-left: 8em;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-container{
+  width: 100%;
+  height: 748px;
+}
+a.mat-list-item {
+  text-decoration: none;
+  border-bottom: 1px solid white;
+}
+.side-nav {
+  width: 12%;
+  background: #3f51b5;
+  color: white;
+}
+.app-card {
+  padding: 0px !important;
+}
+.card-title {
+  font-size: 20px !important;
+}
+.mat-list-item-content {
+  color: white;
+
+}
+mat-list.mat-list {
+  padding-top: 0px;
+}
+.mat-more-content > button.mat-icon-button {
+  margin-top: -5px;
+}
+.mat-list-item-content {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.example-container > * {
+  width: 100%;
+}

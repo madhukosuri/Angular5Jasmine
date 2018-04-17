@@ -1,0 +1,61 @@
+<mat-grid-list rowHeight="835px" cols="3">
+  <div class="login">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-subtitle class="login-name"><b>{{singUpTitle}}</b></mat-card-subtitle>
+      </mat-card-header>
+      <form class="login-form" (ngSubmit)="onSubmit()" [formGroup]="signUpForm">
+        <div class="example-container" formGroupName="user">
+          <mat-form-field>
+            <input matInput placeholder="Enter your email" required
+                   name="email" formControlName="email">
+            <mat-error *ngIf="email.invalid && (email.dirty || email.touched || isSubmit)">
+              <span *ngIf="email.errors.required">
+                Please select a Email
+              </span>
+              <span *ngIf="email.errors.maxlength">
+                Please enter a Email no more than 250 characters.
+              </span>
+              <span *ngIf="email.errors.pattern">
+                Please enter a valid Email .
+              </span>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Enter your password" type="password" required
+                   name="password" formControlName="password">
+            <mat-error *ngIf="password.invalid && (password.dirty || password.touched || isSubmit)">
+            <span *ngIf="password.errors.required">
+              Please enter a password
+            </span>
+              <span *ngIf="password.errors.maxlength">
+              Please enter a password no more than 16 characters.
+            </span>
+              <span *ngIf="password.errors.minlength">
+              Please enter a password at least 6 characters.
+            </span>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Enter your password-confirmation" type="password" required
+                   name="password" formControlName="password_confirmation">
+            <mat-error *ngIf="password_confirmation.invalid && (password_confirmation.dirty || password_confirmation.touched || isSubmit)">
+              <span *ngIf="password_confirmation.errors.required">
+                Please enter a password
+              </span>
+              <span *ngIf="password_confirmation.errors.maxlength">
+                Please enter a password no more than 16 characters.
+              </span>
+              <span *ngIf="password_confirmation.errors.minlength">
+                Please enter a password at least 6 characters.
+              </span>
+            </mat-error>
+          </mat-form-field>
+          <mat-card-actions>
+            <button type="submit" mat-raised-button color="primary" class="login-btn"><b>SIGN-UP</b></button>
+          </mat-card-actions>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</mat-grid-list>
