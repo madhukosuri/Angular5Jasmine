@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './modules/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './modules/routing/app-routing.module';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
-import { HeaderComponent } from './layouts/header/header.component';
+import {DialogOverviewExampleDialog, HeaderComponent} from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -25,16 +27,20 @@ import { OrdersComponent } from './orders/orders.component';
     LoginComponent,
     SignUpComponent,
     PageNotFoundComponent,
+    DialogOverviewExampleDialog,
     UsersComponent,
     ProductsComponent,
-    OrdersComponent
+    OrdersComponent,
   ],
+  entryComponents: [DialogOverviewExampleDialog],
   imports: [
     BrowserModule,
     MaterialModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule
   ],
   providers: [],
   bootstrap: [AppComponent]

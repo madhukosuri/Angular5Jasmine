@@ -1,0 +1,58 @@
+<mat-toolbar style="color: #eee;background-color: cadetblue;">
+  <span>Users</span>
+</mat-toolbar>
+<div class="user-admin-container">
+  <div class="example-header">
+    <mat-form-field style="width: 32%; margin-left: 76em">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+    </mat-form-field>
+  </div>
+  <mat-table *ngIf="dataSource" #table [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef><b>No</b></mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="first_name">
+      <mat-header-cell *matHeaderCellDef><b>FirstName</b></mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.first_name }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="last_name">
+      <mat-header-cell *matHeaderCellDef><b>LastName</b></mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.last_name }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef><b>Email</b></mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.email }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="country">
+      <mat-header-cell *matHeaderCellDef><b>Country</b></mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.country }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="date_of_birth">
+      <mat-header-cell *matHeaderCellDef><b>DOB</b></mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.date_of_birth }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="city">
+      <mat-header-cell *matHeaderCellDef><b>City</b></mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.city }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="state">
+      <mat-header-cell *matHeaderCellDef><b>State</b></mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.state }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="zipcode">
+      <mat-header-cell *matHeaderCellDef><b>Zipcode</b></mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.zipcode }}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator #paginator
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 20, 50, 100]"
+                 [showFirstLastButtons]="true">
+  </mat-paginator>
+  <div class="button-row">
+    <button mat-raised-button color="primary"> <a mat-list-item routerLink="./new" routerLinkActive="active" role="listitem">New User</a></button>
+  </div>
+</div>

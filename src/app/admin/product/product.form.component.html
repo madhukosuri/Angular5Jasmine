@@ -1,0 +1,45 @@
+<mat-toolbar style="color: #eee;background-color: cadetblue;">
+  <span>New Product</span>
+</mat-toolbar>
+
+<mat-card class="user-form-card" style="width: 710px;margin-left: 20em;margin-top: 1em">
+  <form class="user-form">
+    <mat-form-field class="mat-input-field">
+      <input matInput placeholder="Name" type="text">
+    </mat-form-field>
+
+    <mat-form-field class="mat-input-field">
+      <input matInput placeholder="Qty" type="number">
+    </mat-form-field>
+
+    <mat-form-field class="mat-input-field">
+      <input matInput [matDatepicker]="MFGDate" placeholder="MFG Date">
+      <mat-datepicker-toggle matSuffix [for]="MFGDate"></mat-datepicker-toggle>
+      <mat-datepicker #MFGDate></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="mat-input-field">
+      <input matInput [matDatepicker]="EXPDate" placeholder="EXP Date">
+      <mat-datepicker-toggle matSuffix [for]="EXPDate"></mat-datepicker-toggle>
+      <mat-datepicker #EXPDate></mat-datepicker>
+    </mat-form-field>
+
+    <section style="margin-top: 29px; margin-bottom: 10px">
+      <mat-checkbox class="example-margin" disabled="true">ProductAvaible</mat-checkbox>
+      <mat-checkbox class="example-margin" disabled="true">ProductNotAvaible</mat-checkbox>
+    </section>
+
+    <mat-form-field class="mat-input-field">
+      <mat-select placeholder="Brand">
+        <mat-option *ngFor="let brand of brands" [value]="brand.value">
+          {{ brand.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="button-row">
+      <button mat-raised-button color="primary">Save</button>
+      <a mat-raised-button color="accent">Cancel</a>
+    </div>
+  </form>
+</mat-card>

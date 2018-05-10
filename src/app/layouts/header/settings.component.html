@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>CHANGE EMAIL ADDRESS, PASSWORD</h1>
+  <mat-form-field class="setting-form-width">
+    <input matInput placeholder="Email Address" type="email">
+  </mat-form-field>
+<br/>
+<mat-form-field class="setting-form-width">
+  <input matInput placeholder="Current Password" type="password">
+</mat-form-field>
+<br/>
+<mat-form-field class="setting-form-width">
+  <input matInput placeholder="Password" type="password">
+</mat-form-field>
+<br/>
+<mat-form-field class="setting-form-width">
+  <input matInput placeholder="Password Confirmation" type="password">
+</mat-form-field>
+<br/>
+<div mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="onNoClick()">No Thanks</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data.animal" cdkFocusInitia>Ok</button>
+</div>
+
