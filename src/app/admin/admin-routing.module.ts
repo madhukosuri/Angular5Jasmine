@@ -23,6 +23,7 @@ const adminRoutes: Routes = [
           { path: 'users', component: UserComponent },
           { path: 'users/new', component: UserFormComponent },
           { path: 'products/new', component: ProductFormComponent },
+          { path: 'users/:id/edit', component: UserFormComponent },
           { path: 'orders', component: OrderComponent },
           { path: '', component: AdminDashboardComponent }
         ]

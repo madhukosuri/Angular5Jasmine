@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,8 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 export class HeaderComponent implements OnInit {
   animal: string;
   name: string;
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,
+              private router: Router) {}
 
   ngOnInit() {
   }
@@ -28,6 +30,9 @@ export class HeaderComponent implements OnInit {
 
   onSubmit(): void {
 
+  }
+  logout(): void {
+    this.router.navigate(['login']);
   }
 }
 

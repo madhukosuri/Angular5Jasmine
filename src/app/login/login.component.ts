@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +15,17 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   isSubmit: boolean;
   EMAIL_REGEX = '[a-z0-9!#$%&\'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*';
+  errorMessage: string;
 
   ngOnInit(): void {
     this.loginNameTitle = 'LOGIN TO DISPUTES';
     this.singupTitle = 'SING UP HERE';
   }
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder,
+              private router: Router,
+              private userService: UserService
+             ) {
     this.createForm();
   }
 
@@ -49,6 +54,19 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.isSubmit = true;
-    this.router.navigate(['admin/dashboard']);
+    if(this.loginForm.valid){
+      this.userService.login(this.loginForm.value)
+        .subscribe((res) => {
+          if(res.status=='success'){
+            this.router.navigate(['admin/dashboard']);
+          }else {
+            this.errorMessage = 'Invalid Credentials'
+          }
+        })
+      //
+    } else {
+      return false;
+    }
+
   }
 }

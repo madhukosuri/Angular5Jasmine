@@ -12,13 +12,15 @@ import { OrderComponent } from './order/order.component';
 import {UserFormComponent} from './user/user.form.component';
 import {ProductFormComponent} from './product/product.form.component';
 
-
 import {UserService} from '../services/user.service';
+import {ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   imports:[
     CommonModule,
     AdminRoutingModule,
+    ReactiveFormsModule,
     MaterialModule
   ],
   declarations: [

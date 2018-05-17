@@ -1,5 +1,4 @@
-export class Login {
-
+export class credentials {
   constructor(
     public email: string,
     public password: string

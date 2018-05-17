@@ -13,3 +13,6 @@ export interface UsersData {
   country :string;
   date_of_birth :Date;
 }
+
+
+export const _dummy = undefined;

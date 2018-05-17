@@ -4,6 +4,7 @@
       <mat-card-header>
         <mat-card-subtitle class="login-name"><b>{{singUpTitle}}</b></mat-card-subtitle>
       </mat-card-header>
+      <p style="color: darkred">{{errorMessage}}</p>
       <form class="login-form" (ngSubmit)="onSubmit()" [formGroup]="signUpForm">
         <div class="example-container" formGroupName="user">
           <mat-form-field>
@@ -34,7 +35,11 @@
               <span *ngIf="password.errors.minlength">
               Please enter a password at least 6 characters.
             </span>
+              <span *ngIf="doesMatchPassword()">
+
+              </span>
             </mat-error>
+            <!--<p class="bg-danger" *ngIf="passwordFormGroup.errors?.doesMatchPassword">Password does not match</p>-->
           </mat-form-field>
           <mat-form-field>
             <input matInput placeholder="Enter your password-confirmation" type="password" required
@@ -48,6 +53,10 @@
               </span>
               <span *ngIf="password_confirmation.errors.minlength">
                 Please enter a password at least 6 characters.
+              </span>
+
+              <span *ngIf="passwordMissmatch">
+                Password are miss matching
               </span>
             </mat-error>
           </mat-form-field>

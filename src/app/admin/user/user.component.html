@@ -10,7 +10,11 @@
   <mat-table *ngIf="dataSource" #table [dataSource]="dataSource">
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef><b>No</b></mat-header-cell>
-      <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
+      <mat-cell *matCellDef="let row">
+        <a [routerLink]="[row.id, 'edit']">
+          <span class="badge">{{ row.id }}</span>
+        </a>
+      </mat-cell>
     </ng-container>
     <ng-container matColumnDef="first_name">
       <mat-header-cell *matHeaderCellDef><b>FirstName</b></mat-header-cell>

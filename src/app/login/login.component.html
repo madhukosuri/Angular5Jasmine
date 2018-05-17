@@ -4,6 +4,7 @@
       <mat-card-header>
         <mat-card-subtitle class="login-name"><b>{{loginNameTitle}}</b></mat-card-subtitle>
       </mat-card-header>
+      <p style="color: darkred">{{errorMessage}}</p>
       <form class="login-form" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
         <div class="example-container" formGroupName="user">
           <mat-form-field>
