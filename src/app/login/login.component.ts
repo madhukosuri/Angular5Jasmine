@@ -54,16 +54,15 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.isSubmit = true;
-    if(this.loginForm.valid){
+    if(this.loginForm.valid) {
       this.userService.login(this.loginForm.value)
         .subscribe((res) => {
-          if(res.status=='success'){
+          if(res.status=='success') {
             this.router.navigate(['admin/dashboard']);
-          }else {
+           } else {
             this.errorMessage = 'Invalid Credentials'
           }
         })
-      //
     } else {
       return false;
     }
