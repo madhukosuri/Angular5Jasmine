@@ -27,10 +27,6 @@ export class UserFormComponent implements OnInit {
     {value: 'pizza-1', viewValue: 'Pizza'},
     {value: 'tacos-2', viewValue: 'Tacos'}
   ];
-  checked = false;
-  indeterminate = false;
-  align = 'start';
-  disabled = false;
   stateCtrl: FormControl;
   filteredStates: Observable<any[]>;
 
