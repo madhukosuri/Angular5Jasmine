@@ -9,7 +9,7 @@
         <div class="example-container" formGroupName="user">
           <mat-form-field>
             <input matInput placeholder="Enter your email" required
-                   name="email" formControlName="email">
+                   name="email" formControlName="email" type="email">
             <mat-error *ngIf="email.invalid && (email.dirty || email.touched || isSubmit)">
               <span *ngIf="email.errors.required">
                 Please select a Email

@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import {UserService} from '../services/user.service';
 
 @Component({
@@ -66,6 +69,5 @@ export class LoginComponent implements OnInit {
     } else {
       return false;
     }
-
   }
 }
