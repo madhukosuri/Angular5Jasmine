@@ -4,4 +4,8 @@ export interface currentUser {
   email: string;
   token: string;
 }
+export interface LoginData {
+  email: string;
+  password: string;
+}
 export const _dummy = undefined;

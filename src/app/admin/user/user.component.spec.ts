@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 import {UserComponent} from './user.component';
 import {UserService} from '../../services/user.service';

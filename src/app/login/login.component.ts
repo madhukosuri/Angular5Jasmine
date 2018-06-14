@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import {UserService} from '../services/user.service';
 
 @Component({
@@ -54,19 +57,17 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.isSubmit = true;
-    if(this.loginForm.valid){
+    if(this.loginForm.valid) {
       this.userService.login(this.loginForm.value)
         .subscribe((res) => {
-          if(res.status=='success'){
+          if(res.status=='success') {
             this.router.navigate(['admin/dashboard']);
-          }else {
+           } else {
             this.errorMessage = 'Invalid Credentials'
           }
         })
-      //
     } else {
       return false;
     }
-
   }
 }
